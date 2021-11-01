@@ -1,5 +1,13 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
+
+dotenv.config({path: './config.env'});
+const PORT = process.env.PORT;
+
+require('./db/conn');
+
+
 
 // middleware
 const middleware = (req, res, next) => {
@@ -27,7 +35,7 @@ app.get('/signup', (req, res)  => {
     res.send('Hello world SIGN UP from server');
 });
 
-app.listen(3000, () => {
-    console.log('Server is running at PORT 3000');
+app.listen(PORT, () => {
+    console.log(`Server is running at PORT ${PORT}`);
 })
 // console.log('Hello to the console');

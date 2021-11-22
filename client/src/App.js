@@ -11,7 +11,7 @@ import Signup from './components/Signup';
 
 function App() {
   return (
-    <>
+    <div className="App-header">
       <Navbar />
 
       <Routes>
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/signup" element={<Signup/>} />
       </Routes>
-    </>
+    </div>
   );
 }
 

@@ -4,19 +4,19 @@ function Contact() {
     return (
         <div className="container">
             <div className="row mt-3">
-                <div className="card col mx-1">
+                <div className="card col-md-4 col-sm-12">
                     <div className="card-body">
                         <h5 className="card-title">Phone</h5>
                         9090909087
                     </div>
                 </div>
-                <div className="card col mx-1">
+                <div className="card col-md-4 col-sm-12">
                     <div className="card-body">
                         <h5 className="card-title">Email</h5>
                         pthombre657@gmail.com
                     </div>
                 </div>
-                <div className="card col mx-1">
+                <div className="card col-md-4 col-sm-12">
                     <div className="card-body">
                         <h5 className="card-title">Address</h5>
                         Ambegaon Bk, Pune

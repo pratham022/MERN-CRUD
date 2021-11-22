@@ -46,7 +46,7 @@ function About() {
                         </div>
 
                         <div className="col-md-6">
-                            <h6>Profession</h6>
+                            <h6>work</h6>
                         </div>
                         <div className="col-md-6">
                             <p>Web Developer</p>

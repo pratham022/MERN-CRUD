@@ -18,15 +18,15 @@ const middleware = (req, res, next) => {
     next();
 }
 
-// Step 3
-if (process.env.NODE_ENV === 'production') {
-    // console.log saple hshshshshsh
-    app.use(express.static( 'client/build' ));
+// Accessing the path module
+const path = require("path");
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
-    });
-}
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 
 app.listen(PORT, () => {

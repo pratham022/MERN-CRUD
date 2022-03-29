@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 dotenv.config({path: './config.env'});
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 require('./db/conn');
 app.use(express.json());
@@ -18,17 +18,14 @@ const middleware = (req, res, next) => {
     next();
 }
 
-// // ... other imports 
-// const path = require("path")
+// Step 3
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static( 'client/build' ));
 
-// // ... other app.use middleware 
-// app.use(express.static(path.join(__dirname, "client", "build")))
-
-// // ...
-// // Right before your app.listen(), add this:
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+    });
+}
 
 
 app.listen(PORT, () => {

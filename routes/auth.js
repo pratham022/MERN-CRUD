@@ -5,9 +5,9 @@ const bcrypt = require('bcryptjs');
 require('../db/conn');
 const User = require('../models/userSchema');
 
-router.get('/', (req, res)  => {
-    res.send('Hello world from server');
-});
+// router.get('/', (req, res)  => {
+//     res.send('Hello world from server');
+// });
 
 // Using Promises
 // router.post('/register', (req, res) => {
